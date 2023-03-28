@@ -12,13 +12,22 @@ import pucrs.myflight.modelo.Rota;
 import pucrs.myflight.modelo.Voo;
 
 public class App {
-	
-		
-
-
 	public static void main(String[] args) {
 		
 		System.out.println("\nMyFlight project...");
+
+		/*
+		 * Processo para criação de Voos!!
+		 * 1º Criação das CIAS aéreas;
+		 * 2º Criação da aeronave;
+		 * 3º Criação da geolocalização da origem e destino (coordenadas);
+		 * 4º Criação dos aeroportos com a respectiva localização;
+		 * 5º Criação da Rota incluindo CIA, Aeroporto de origem, Aeoroporto de destino e o Avião;
+		 * 6º Criação da duração em minutos da viagem;
+		 * 7º Criação de um LocalDateTime;
+		 * 8º Definir um status;
+		 * 9º Para finalizar a criação do Voo, incluindo Rota, LocalDateTime e duração
+		 */
 
 		CiaAerea GOL= new CiaAerea("1231", "GOL");
 		CiaAerea LATAM= new CiaAerea("1314", "LATAM");
@@ -50,15 +59,8 @@ public class App {
 
 		gerenAero.adicionar(Guarulhos);
 		gerenAero.adicionar(SantaMonica);
-		
-
 		gerenVoos.adicionar(GUARxSWMN);
 		gerenVoos.listarTodos();
-
-		
-
-
-
-
 	}
+
 }
