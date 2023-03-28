@@ -1,6 +1,7 @@
 package pucrs.myflight.consoleApp;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Scanner;
 import pucrs.myflight.modelo.Aeronave;
 import pucrs.myflight.modelo.Aeroporto;
 import pucrs.myflight.modelo.CiaAerea;
@@ -44,7 +45,7 @@ public class App {
 
 		Duration duracao1= Duration.ofMinutes(522);
 
-		LocalDateTime datahora1= LocalDateTime.of(2023, 03, 16, 21, 0);
+		LocalDateTime datahora1= LocalDateTime.of(2023, 03, 16, 0, 0);
 
 		Voo.Status confirmado = Voo.Status.CONFIRMADO;
 
@@ -60,7 +61,43 @@ public class App {
 		gerenAero.adicionar(Guarulhos);
 		gerenAero.adicionar(SantaMonica);
 		gerenVoos.adicionar(GUARxSWMN);
-		gerenVoos.listarTodos();
+		
+		
+		/*
+		 * MENU:
+		 * 1- Ver lista de voos disponíveis
+		 * 2- Buscar por rota
+		 * 
+		 */
+
+		 Scanner usr= new Scanner(System.in);
+
+		 System.out.println("MENU:");
+		 System.out.println("1- Ver lista de voos disponíveis");
+		 System.out.println("2- Buscar por rota");
+
+		 int answer= usr.nextInt();
+	
+		 switch(answer){
+			case 1:
+				gerenVoos.listarTodos();
+				break;
+			case 2:
+				System.out.println("Dentre estas opções, onde você deseja embarcar no voo:");
+				gerenAero.listarTodos();
+
+				usr.nextLine();
+				String origemUsr= usr.nextLine();
+
+				System.out.println("Agora, dentre estas opções, para onde você deseja ir:");
+				gerenAero.listarTodos();
+				String destinoUsr= usr.nextLine();
+				gerenVoos.buscarPorRota(origemUsr, destinoUsr);
+
+		 }
+	
 	}
+
+	
 
 }
