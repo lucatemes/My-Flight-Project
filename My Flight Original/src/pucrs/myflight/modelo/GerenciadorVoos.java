@@ -77,12 +77,12 @@ public class GerenciadorVoos {
 
     }
 
-    public void comprarTicket(int nVoo){
+    public void comprarTicket(int nVoo, int qtdBilhete){
         int newVoo= nVoo - 1;
         for(Voo lista: voos){
             if(newVoo == voos.indexOf(lista)){
-                lista.setLugares(lista.getLugares() - 1);
-                System.out.println("Ticket comprado com sucesso, lugares disponíveis: " + lista.getLugares());
+                lista.setLugares(lista.getLugares() - qtdBilhete);
+                System.out.println("Compra efetuada com sucesso, lugares disponíveis: " + lista.getLugares());
             }
         }
     }

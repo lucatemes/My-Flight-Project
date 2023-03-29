@@ -99,7 +99,9 @@ public class App {
 				System.out.println(" ");
 				System.out.println("Digite o número do voo que deseja efetuar a compra:");
 				int vooUsr= usr.nextInt();
-				gerenVoos.comprarTicket(vooUsr);
+				System.out.println("Quantos bilhetes deseja comprar?:");
+				int vooUsr2= usr.nextInt();
+				gerenVoos.comprarTicket(vooUsr, vooUsr2);
 				break;
 			default:
 				System.out.println("Função não encontrada.");
