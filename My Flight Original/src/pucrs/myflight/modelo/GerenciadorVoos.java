@@ -24,6 +24,8 @@ public class GerenciadorVoos {
 			System.out.print(lista.getRota().getOrigem().getNome());
             System.out.print(" X ");
             System.out.println(lista.getRota().getDestino().getNome());
+            System.out.print("LUGARES DISPONÍVEIS: ");
+            System.out.println(lista.getLugares());
             System.out.print("==================================");
 		}
     }
@@ -46,6 +48,8 @@ public class GerenciadorVoos {
 			    System.out.print(lista.getRota().getOrigem().getNome());
                 System.out.print(" X ");
                 System.out.println(lista.getRota().getDestino().getNome());
+                System.out.print("LUGARES DISPONÍVEIS: ");
+                System.out.println(lista.getLugares());
                 System.out.println("=================================");
             }
         }
@@ -71,6 +75,16 @@ public class GerenciadorVoos {
             }
         }
 
+    }
+
+    public void comprarTicket(int nVoo){
+        int newVoo= nVoo - 1;
+        for(Voo lista: voos){
+            if(newVoo == voos.indexOf(lista)){
+                lista.setLugares(lista.getLugares() - 1);
+                System.out.println("Ticket comprado com sucesso, lugares disponíveis: " + lista.getLugares());
+            }
+        }
     }
 
 

@@ -49,7 +49,7 @@ public class App {
 
 		Voo.Status confirmado = Voo.Status.CONFIRMADO;
 
-		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1);
+		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 130);
 
 		
 		//GERENCIAMENTO
@@ -67,7 +67,7 @@ public class App {
 		 * MENU:
 		 * 1- Ver lista de voos disponíveis
 		 * 2- Buscar por rota
-		 * 
+		 * 3- Comprar Bilhete de voo
 		 */
 
 		 Scanner usr= new Scanner(System.in);
@@ -75,6 +75,7 @@ public class App {
 		 System.out.println("MENU:");
 		 System.out.println("1- Ver lista de voos disponíveis");
 		 System.out.println("2- Buscar por rota");
+		 System.out.println("3- Comprar bilhete para um voo");
 
 		 int answer= usr.nextInt();
 	
@@ -93,9 +94,17 @@ public class App {
 				gerenAero.listarTodos();
 				String destinoUsr= usr.nextLine();
 				gerenVoos.buscarPorRota(origemUsr, destinoUsr);
-
+			case 3:
+				gerenVoos.listarTodos();
+				System.out.println(" ");
+				System.out.println("Digite o número do voo que deseja efetuar a compra:");
+				int vooUsr= usr.nextInt();
+				gerenVoos.comprarTicket(vooUsr);
+				break;
+			default:
+				System.out.println("Função não encontrada.");
+				break;
 		 }
-	
 	}
 
 	

@@ -11,12 +11,14 @@ public class Voo {
 	private Duration duracao;
 	private Rota rota;
 	private Status status;
+	private int lugares;
 	
-	public Voo(Rota rota, LocalDateTime datahora, Duration duracao) {
+	public Voo(Rota rota, LocalDateTime datahora, Duration duracao, int lugares) {
 		this.rota = rota;
 		this.datahora = datahora;
 		this.duracao = duracao;
 		this.status = Status.CONFIRMADO; // default é confirmado
+		this.lugares= lugares;
 	}
 	
 	public Rota getRota() {
@@ -37,5 +39,13 @@ public class Voo {
 	
 	public void setStatus(Status novo) {
 		this.status = novo;
+	}
+
+	public int getLugares(){
+		return lugares;
+	}
+
+	public void setLugares(int vagas){
+		this.lugares= vagas;
 	}
 }
