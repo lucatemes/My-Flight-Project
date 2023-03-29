@@ -56,7 +56,6 @@ public class GerenciadorVoos {
         if(contador == 0){
             System.out.println("Nenhum voo encontrado.");
         }
-
     }
 
     public void buscarPorData(LocalDateTime data){
@@ -74,16 +73,20 @@ public class GerenciadorVoos {
                 System.out.println("=================================");
             }
         }
-
     }
 
     public void comprarTicket(int nVoo, int qtdBilhete){
         int newVoo= nVoo - 1;
+        int contador= 0;
         for(Voo lista: voos){
             if(newVoo == voos.indexOf(lista)){
                 lista.setLugares(lista.getLugares() - qtdBilhete);
                 System.out.println("Compra efetuada com sucesso, lugares disponíveis: " + lista.getLugares());
+                contador++;
             }
+        }
+        if(contador == 0){
+            System.out.println("Nenhum voo com este código encontrado.");
         }
     }
 

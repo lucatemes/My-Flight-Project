@@ -56,7 +56,7 @@ public class App {
 
 		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 130);
 		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80);
-		
+
 		//GERENCIAMENTO
 
 		GerenciadorCias gerenEmpresa= new GerenciadorCias();
@@ -79,14 +79,16 @@ public class App {
 		 */
 
 		 Scanner usr= new Scanner(System.in);
-
+		 for(int i= 0; i < 20; i++){
+		 System.out.println(" ");
 		 System.out.println("MENU:");
 		 System.out.println("1- Ver lista de voos disponíveis");
 		 System.out.println("2- Buscar por rota");
 		 System.out.println("3- Comprar bilhete para um voo");
+		 System.out.println("0- Sair");
 		 
 		 int answer= usr.nextInt();
-	
+
 		 switch(answer){
 			case 1:
 				gerenVoos.listarTodos();
@@ -102,7 +104,6 @@ public class App {
 				gerenVoos.buscarPorRota(origemUsr, destinoUsr);
 				break;
 			case 3:
-				gerenVoos.listarTodos();
 				System.out.println(" ");
 				System.out.println("Digite o número do voo que deseja efetuar a compra:");
 				int vooUsr= usr.nextInt();
@@ -110,12 +111,14 @@ public class App {
 				int vooUsr2= usr.nextInt();
 				gerenVoos.comprarTicket(vooUsr, vooUsr2);
 				break;
+			case 0:
+				i = 999;
+				System.out.println("...");
+				break;
 			default:
 				System.out.println("Função não encontrada.");
 				break;
-		 }
+		    }
+		}
 	}
-
-	
-
 }
