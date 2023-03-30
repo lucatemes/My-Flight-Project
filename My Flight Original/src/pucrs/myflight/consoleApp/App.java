@@ -32,30 +32,36 @@ public class App {
 
 		CiaAerea GOL= new CiaAerea("1231", "GOL");
 		CiaAerea LATAM= new CiaAerea("1314", "LATAM");
+		CiaAerea QATAR= new CiaAerea("1212", "QATAR AIRWAYS");
 
 		Aeronave BOEING177= new Aeronave("157","Avião para voos internacionais.");
+		Aeronave BOEING777= new Aeronave("777", "Avião destinado para voos nacionais");
 
 		Geo portoAlegreGeo= new Geo(-30.033056, -51.230000);
-		Aeroporto SalgadoFilho= new Aeroporto("3", "POA", portoAlegreGeo);
-
+		Geo dohaQatar= new Geo(25.2807,51.5217);
 		Geo guarulhosGeo= new Geo(-23.4322, -46.4692);
-		Aeroporto Guarulhos= new Aeroporto("1", "GUAR", guarulhosGeo);
-
 		Geo santaMonicaGEO= new Geo(34.0158, -118.451);
+
+		Aeroporto SalgadoFilho= new Aeroporto("3", "POA", portoAlegreGeo);
+		Aeroporto HamadDoha= new Aeroporto("4", "HAMAD", dohaQatar);
+		Aeroporto Guarulhos= new Aeroporto("1", "GUAR", guarulhosGeo);
 		Aeroporto SantaMonica= new Aeroporto("2", "SWMN", santaMonicaGEO);
 
-		Rota GtoS = new Rota(LATAM, Guarulhos, SantaMonica, BOEING177);
+		Rota GtoS = new Rota(LATAM, Guarulhos, SantaMonica, BOEING777);
 		Rota GtoP = new Rota(GOL, Guarulhos, SalgadoFilho, BOEING177);
+		Rota GtoD = new Rota(QATAR, Guarulhos, HamadDoha, BOEING777);
 
 		Duration duracao2= Duration.ofMinutes(120);
 		Duration duracao1= Duration.ofMinutes(522);
+		Duration duracao3= Duration.ofMinutes(850);
 
 		LocalDateTime datahora1= LocalDateTime.of(2023, 03, 16, 0, 0);
 
 		Voo.Status confirmado = Voo.Status.CONFIRMADO;
 
-		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 130);
+		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 301);
 		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80);
+		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao3, 368);
 
 		//GERENCIAMENTO
 
@@ -66,6 +72,9 @@ public class App {
 		gerenAero.adicionar(Guarulhos);
 		gerenAero.adicionar(SalgadoFilho);
 		gerenAero.adicionar(SantaMonica);
+		gerenAero.adicionar(HamadDoha);
+
+		gerenVoos.adicionar(GUARxDOHA);
 		gerenVoos.adicionar(GUARxSWMN);
 		gerenVoos.adicionar(GUARxPOA);
 
