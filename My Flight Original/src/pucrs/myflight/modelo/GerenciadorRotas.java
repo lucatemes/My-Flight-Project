@@ -20,18 +20,6 @@ public class GerenciadorRotas {
 		}
     }
 
-    public void buscarPorOrigem(Aeroporto origem){
-        for(Rota lista : rotas){
-            if(origem == lista.getOrigem()){
-            System.out.println("ORIGEM: ");
-			System.out.println(lista.getOrigem());
-            System.out.println("COMPANHIA: ");
-			System.out.println(lista.getCia());
-            System.out.println("AVIÃO: ");
-			System.out.println(lista.getAeronave());
-            }
-        }
-
-    }
+    
 
 }

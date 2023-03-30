@@ -8,6 +8,7 @@ import pucrs.myflight.modelo.CiaAerea;
 import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
+import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.GerenciadorVoos;
 import pucrs.myflight.modelo.Rota;
 import pucrs.myflight.modelo.Voo;
@@ -68,6 +69,7 @@ public class App {
 		GerenciadorCias gerenEmpresa= new GerenciadorCias();
 		GerenciadorVoos gerenVoos= new GerenciadorVoos();
 		GerenciadorAeroportos gerenAero= new GerenciadorAeroportos();
+		GerenciadorRotas gerenRotas= new GerenciadorRotas();
 
 		gerenAero.adicionar(Guarulhos);
 		gerenAero.adicionar(SalgadoFilho);
@@ -85,6 +87,8 @@ public class App {
 		 * 1- Ver lista de voos disponíveis
 		 * 2- Buscar por rota
 		 * 3- Comprar Bilhete de voo
+		 * 4- Buscar por origem
+		 * 5- Buscar por destino
 		 */
 
 		 Scanner usr= new Scanner(System.in);
@@ -94,6 +98,8 @@ public class App {
 		 System.out.println("1- Ver lista de voos disponíveis");
 		 System.out.println("2- Buscar por rota");
 		 System.out.println("3- Comprar bilhete para um voo");
+		 System.out.println("4- Buscar por origem");
+		 System.out.println("5- Buscar por destino");
 		 System.out.println("0- Sair");
 		 
 		 int answer= usr.nextInt();
@@ -119,6 +125,22 @@ public class App {
 				System.out.println("Quantos bilhetes deseja comprar?:");
 				int vooUsr2= usr.nextInt();
 				gerenVoos.comprarTicket(vooUsr, vooUsr2);
+				break;
+			case 4:
+				System.out.println(" ");
+				System.out.println("Digite a origem:");
+				gerenAero.listarTodos();
+				usr.nextLine();
+				String origemUs= usr.nextLine();
+				gerenVoos.buscarPorOrigem(origemUs);
+				break;
+			case 5:
+				System.out.println(" ");
+				System.out.println("Digite o destino:");
+				gerenAero.listarTodos();
+				usr.nextLine();
+				String destinoUs= usr.nextLine();
+				gerenVoos.buscarPorDestino(destinoUs);
 				break;
 			case 0:
 				i = 999;

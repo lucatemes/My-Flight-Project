@@ -10,6 +10,7 @@ public class GerenciadorVoos {
     }
 
     public void listarTodos(){
+        int contador =0;
         for(Voo lista : voos ){
             System.out.println("=================================");
             System.out.print("NÚMERO DO VOO: ");
@@ -27,7 +28,11 @@ public class GerenciadorVoos {
             System.out.print("LUGARES DISPONÍVEIS: ");
             System.out.println(lista.getLugares());
             System.out.print("==================================");
+            contador++;
 		}
+        if(contador == 0){
+            System.out.println("Nenhum voo encontrado.");
+        }
     }
 
     public void buscarPorRota(String origem, String destino){
@@ -54,11 +59,61 @@ public class GerenciadorVoos {
             }
         }
         if(contador == 0){
-            System.out.println("Nenhum voo encontrado.");
+            System.out.println("Voo não encontrado.");
         }
     }
 
+    public void buscarPorDestino(String destino){
+        for(Voo lista : voos){
+            if(destino.equals(lista.getRota().getDestino().getNome())){
+                System.out.println("=================================");
+                System.out.print("NÚMERO DO VOO: ");
+                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("DATA/HORA: ");
+			    System.out.println(lista.getDatahora());
+                System.out.print("DURAÇÃO: ");
+			    System.out.println(lista.getDuracao());
+                System.out.print("STATUS: ");
+			    System.out.println(lista.getStatus());
+                System.out.print("ROTA: ");
+			    System.out.print(lista.getRota().getOrigem().getNome());
+                System.out.print(" X ");
+                System.out.println(lista.getRota().getDestino().getNome());
+                System.out.print("LUGARES DISPONÍVEIS: ");
+                System.out.println(lista.getLugares());
+                System.out.println("=================================");
+            }
+            
+        }
+
+    }
+
+    public void buscarPorOrigem(String origem){
+        for(Voo lista : voos){
+            if(origem.equals(lista.getRota().getOrigem().getNome())){
+                System.out.println("=================================");
+                System.out.print("NÚMERO DO VOO: ");
+                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("DATA/HORA: ");
+			    System.out.println(lista.getDatahora());
+                System.out.print("DURAÇÃO: ");
+			    System.out.println(lista.getDuracao());
+                System.out.print("STATUS: ");
+			    System.out.println(lista.getStatus());
+                System.out.print("ROTA: ");
+			    System.out.print(lista.getRota().getOrigem().getNome());
+                System.out.print(" X ");
+                System.out.println(lista.getRota().getDestino().getNome());
+                System.out.print("LUGARES DISPONÍVEIS: ");
+                System.out.println(lista.getLugares());
+                System.out.println("=================================");
+            }
+        }
+
+    }
+
     public void buscarPorData(LocalDateTime data){
+        int contador =0;
         for(Voo lista : voos){
             if(data == lista.getDatahora()){
                 System.out.println("=================================");
@@ -71,7 +126,11 @@ public class GerenciadorVoos {
                 System.out.println("|DURAÇÃO|");
                 System.out.println(lista.getDuracao());
                 System.out.println("=================================");
+                contador++;
             }
+        }
+        if(contador == 0){
+            System.out.println("Voo não encontrado.");
         }
     }
 
