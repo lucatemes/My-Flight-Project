@@ -78,12 +78,19 @@ public class GerenciadorVoos {
     public void comprarTicket(int nVoo, int qtdBilhete){
         int newVoo= nVoo - 1;
         int contador= 0;
+        if(newVoo >= 0){
         for(Voo lista: voos){
             if(newVoo == voos.indexOf(lista)){
+                if(qtdBilhete > 0 && qtdBilhete <= lista.getLugares()){
                 lista.setLugares(lista.getLugares() - qtdBilhete);
                 System.out.println("Compra efetuada com sucesso, lugares disponíveis: " + lista.getLugares());
+                }else{
+                    System.out.println("Não é possível fornecer esta quantidade de bilhetes.");
+                }
                 contador++;
+            
             }
+        }
         }
         if(contador == 0){
             System.out.println("Nenhum voo com este código encontrado.");
