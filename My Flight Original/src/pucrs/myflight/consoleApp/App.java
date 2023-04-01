@@ -97,9 +97,9 @@ public class App {
 		 System.out.println("MENU:");
 		 System.out.println("1- Ver lista de voos disponíveis");
 		 System.out.println("2- Buscar por rota");
-		 System.out.println("3- Comprar bilhete para um voo");
+		 System.out.println("3- Buscar por destino");
 		 System.out.println("4- Buscar por origem");
-		 System.out.println("5- Buscar por destino");
+		 System.out.println("5- Comprar bilhete para um voo");
 		 System.out.println("0- Sair");
 		 
 		 int answer= usr.nextInt();
@@ -120,12 +120,13 @@ public class App {
 				break;
 			case 3:
 				System.out.println(" ");
-				System.out.println("Digite o número do voo que deseja efetuar a compra:");
-				int vooUsr= usr.nextInt();
-				System.out.println("Quantos bilhetes deseja comprar?:");
-				int vooUsr2= usr.nextInt();
-				gerenVoos.comprarTicket(vooUsr, vooUsr2);
+				System.out.println("Digite o destino:");
+				gerenAero.listarTodos();
+				usr.nextLine();
+				String destinoUs= usr.nextLine();
+				gerenVoos.buscarPorDestino(destinoUs);
 				break;
+			
 			case 4:
 				System.out.println(" ");
 				System.out.println("Digite a origem:");
@@ -136,11 +137,11 @@ public class App {
 				break;
 			case 5:
 				System.out.println(" ");
-				System.out.println("Digite o destino:");
-				gerenAero.listarTodos();
-				usr.nextLine();
-				String destinoUs= usr.nextLine();
-				gerenVoos.buscarPorDestino(destinoUs);
+				System.out.println("Digite o número do voo que deseja efetuar a compra:");
+				int vooUsr= usr.nextInt();
+				System.out.println("Quantos bilhetes deseja comprar?:");
+				int vooUsr2= usr.nextInt();
+				gerenVoos.comprarTicket(vooUsr, vooUsr2);
 				break;
 			case 0:
 				i = 999;
