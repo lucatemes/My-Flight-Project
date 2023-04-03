@@ -20,6 +20,14 @@ public class Voo {
 		this.status = Status.CONFIRMADO; // default é confirmado
 		this.lugares= lugares;
 	}
+
+	public Voo(){
+		this.rota= rota;
+		this.datahora= LocalDateTime.of(2016, 8, 12, 0, 0);
+		this.duracao= duracao;
+		this.status= Status.CONFIRMADO;
+		this.lugares= lugares;
+	}
 	
 	public Rota getRota() {
 		return rota;

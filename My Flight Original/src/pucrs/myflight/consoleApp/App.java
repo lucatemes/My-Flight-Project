@@ -12,6 +12,7 @@ import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.GerenciadorVoos;
 import pucrs.myflight.modelo.Rota;
 import pucrs.myflight.modelo.Voo;
+import pucrs.myflight.modelo.VooEscalas;
 
 public class App {
 	public static void main(String[] args) {
@@ -70,6 +71,9 @@ public class App {
 		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 301);
 		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80);
 		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao3, 368);
+
+		VooEscalas GUARxpoa= new VooEscalas(GtoP, GtoD, datahora1, duracao3, 368);
+		System.out.println(GUARxpoa.toString());
 
 		//GERENCIAMENTO
 
