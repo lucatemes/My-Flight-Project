@@ -13,11 +13,16 @@ public class GerenciadorCias {
 		empresas.add(cia);
 	}
 
+	// lista todas companhias aereas
+
 	public void listarTodas(){
 		for(CiaAerea lista : empresas){
 			System.out.println(lista.getNome());
 		}
 	}
+
+	// busca companhia aerea por codigo referente
+
 	public void buscarCodigo(String codigo){
 
 		for(CiaAerea lista : empresas){
@@ -27,6 +32,8 @@ public class GerenciadorCias {
 		}
 	}
 
+	// procura companhia aerea por seus nomes
+	
 	public void buscarNome(String nome){
 
 		for(CiaAerea lista : empresas){

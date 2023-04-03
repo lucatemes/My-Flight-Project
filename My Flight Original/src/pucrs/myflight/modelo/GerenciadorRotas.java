@@ -5,9 +5,13 @@ public class GerenciadorRotas {
 
     private ArrayList<Rota> rotas = new ArrayList<>();
 
+    // adiciona uma rota a um arraylist (para vincular com o voo)
+
     public void adicionar(Rota caminho){
         rotas.add(caminho);
     }
+
+    // lista todas rotas disponiveis para voos
 
     public void listarTodos(){
         for(Rota lista : rotas){

@@ -15,6 +15,8 @@ public class GerenciadorAeronaves {
         }
     }
 
+    // busca por modelos de aeronave
+
     public void buscarPorCodigo(String codigo){
         for(Aeronave lista : avioes){
             if(codigo == lista.getCodigo()){

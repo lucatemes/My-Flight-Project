@@ -8,6 +8,8 @@ public class GerenciadorAeroportos {
         aeros.add(aero);
     }
 
+    // lista todos aeroportos
+
     public void listarTodos(){
         for(Aeroporto lista : aeros){
 			System.out.println(lista.getNome());

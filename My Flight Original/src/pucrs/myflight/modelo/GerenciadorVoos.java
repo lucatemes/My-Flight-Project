@@ -9,6 +9,8 @@ public class GerenciadorVoos {
         voos.add(v1);
     }
 
+    //lista todos voos
+
     public void listarTodos(){
         int contador =0;
         for(Voo lista : voos ){
@@ -34,6 +36,8 @@ public class GerenciadorVoos {
             System.out.println("Nenhum voo encontrado.");
         }
     }
+
+    // busca voos por rota
 
     public void buscarPorRota(String origem, String destino){
         int contador= 0;
@@ -63,6 +67,9 @@ public class GerenciadorVoos {
         }
     }
 
+
+    // busca voos por destino
+
     public void buscarPorDestino(String destino){
         int contador= 0;
         for(Voo lista : voos){
@@ -90,6 +97,8 @@ public class GerenciadorVoos {
             System.out.println("Voo não encontrado.");
         }
     }
+
+    // busca voos por origem
 
     public void buscarPorOrigem(String origem){
         int contador =0;
@@ -119,6 +128,8 @@ public class GerenciadorVoos {
         }
     }
 
+    // busca voos por data
+
     public void buscarPorData(LocalDateTime data){
         int contador =0;
         for(Voo lista : voos){
@@ -140,6 +151,8 @@ public class GerenciadorVoos {
             System.out.println("Voo não encontrado.");
         }
     }
+
+    //reserva tickets de voo
 
     public void comprarTicket(int nVoo, int qtdBilhete){
         int newVoo= nVoo - 1;

@@ -19,6 +19,11 @@ public class App {
 		System.out.println("\nMyFlight project...");
 
 		/*
+		// planejamento
+		// adicionar varias funções em uma ex: buscar voos mais especificamente, apresentando mais informações
+		// como data, origem, destino, aeronave e cia aerea
+		// adicionar valor de ticket e dinheiro de cada usuario
+		// por fim adicionar uma interface grafica para interação
 		 * Processo para criação de Voos!!
 		 * 1º Criação das CIAS aéreas;
 		 * 2º Criação da aeronave;
@@ -52,6 +57,8 @@ public class App {
 		Rota GtoP = new Rota(GOL, Guarulhos, SalgadoFilho, BOEING177);
 		Rota GtoD = new Rota(QATAR, Guarulhos, HamadDoha, BOEING777);
 
+		// duração de cada voo
+
 		Duration duracao2= Duration.ofMinutes(120);
 		Duration duracao1= Duration.ofMinutes(522);
 		Duration duracao3= Duration.ofMinutes(850);
@@ -75,7 +82,7 @@ public class App {
 		gerenAero.adicionar(SalgadoFilho);
 		gerenAero.adicionar(SantaMonica);
 		gerenAero.adicionar(HamadDoha);
-
+		// HAMAD = Doha airport
 		gerenVoos.adicionar(GUARxDOHA);
 		gerenVoos.adicionar(GUARxSWMN);
 		gerenVoos.adicionar(GUARxPOA);
