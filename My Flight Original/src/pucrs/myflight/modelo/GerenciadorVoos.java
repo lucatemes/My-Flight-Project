@@ -176,5 +176,31 @@ public class GerenciadorVoos {
         }
     }
 
-
-}
+    public void buscarGeral(String origem, String destino, int lugaresMinimos){
+        int contador= 0;
+        for(Voo lista : voos){
+            if(lista.getRota().getOrigem().getNome().equals(origem) && lista.getRota().getDestino().getNome().equals(destino) && lista.getLugares() >= lugaresMinimos){
+                contador++;
+                System.out.println("=================================");
+                System.out.print("NÚMERO DO VOO: ");
+                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("DATA/HORA: ");
+			    System.out.println(lista.getDatahora());
+                System.out.print("DURAÇÃO: ");
+			    System.out.println(lista.getDuracao());
+                System.out.print("STATUS: ");
+			    System.out.println(lista.getStatus());
+                System.out.print("ROTA: ");
+			    System.out.print(lista.getRota().getOrigem().getNome());
+                System.out.print(" X ");
+                System.out.println(lista.getRota().getDestino().getNome());
+                System.out.print("LUGARES DISPONÍVEIS: ");
+                System.out.println(lista.getLugares());
+                System.out.println("=================================");
+            }
+        }
+        if(contador == 0){
+            System.out.println("Voo não encontrado.");
+        }
+    }
+}   

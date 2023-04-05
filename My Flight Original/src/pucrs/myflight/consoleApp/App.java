@@ -154,6 +154,18 @@ public class App {
 				int vooUsr2= usr.nextInt();
 				gerenVoos.comprarTicket(vooUsr, vooUsr2);
 				break;
+			case 6:
+				System.out.println("Dentre estas opções, onde você deseja embarcar no voo:");
+				gerenAero.listarTodos();
+				usr.nextLine();
+				String origemUss= usr.nextLine();
+				System.out.println("Agora, dentre estas opções, para onde você deseja ir:");
+				gerenAero.listarTodos();
+				String destinoUss= usr.nextLine();
+				System.out.println("Agora informe quantos tickets você precisa: ");
+				int tickets= usr.nextInt();
+				gerenVoos.buscarGeral(origemUss, destinoUss, tickets);
+				break;
 			case 0:
 				i = 999;
 				System.out.println("...");
