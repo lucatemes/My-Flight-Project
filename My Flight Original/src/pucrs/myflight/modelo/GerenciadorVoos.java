@@ -179,7 +179,8 @@ public class GerenciadorVoos {
     public void buscarGeral(String origem, String destino, int lugaresMinimos){
         int contador= 0;
         for(Voo lista : voos){
-            if(lista.getRota().getOrigem().getNome().equals(origem) && lista.getRota().getDestino().getNome().equals(destino) && lista.getLugares() >= lugaresMinimos){
+            if(lista.getRota().getOrigem().getNome().equals(origem) && lista.getRota().getDestino().getNome().equals(destino)){
+                if(lista.getLugares() >= lugaresMinimos){
                 contador++;
                 System.out.println("=================================");
                 System.out.print("NÚMERO DO VOO: ");
@@ -197,6 +198,9 @@ public class GerenciadorVoos {
                 System.out.print("LUGARES DISPONÍVEIS: ");
                 System.out.println(lista.getLugares());
                 System.out.println("=================================");
+                }else{
+                System.out.println("Lugares insuficientes: " + lista.getLugares() + " bilhetes restantes.");
+                }
             }
         }
         if(contador == 0){

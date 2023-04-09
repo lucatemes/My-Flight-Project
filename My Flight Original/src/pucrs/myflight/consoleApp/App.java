@@ -111,6 +111,7 @@ public class App {
 		 System.out.println("3- Buscar por destino");
 		 System.out.println("4- Buscar por origem");
 		 System.out.println("5- Comprar bilhete para um voo");
+		 System.out.println("6- Buscar geral(destino, origem, quantidade de passageiros)");
 		 System.out.println("0- Sair");
 		 
 		 int answer= usr.nextInt();
