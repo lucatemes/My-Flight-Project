@@ -17,10 +17,10 @@ public class Geo {
 		return longitude;
 	}
 
-	public static double getDistancia(double latitude1, double latitude2, double longitude1, double longitude2){
+	public static double getDistancia(Geo local1, Geo local2){
 		double  distancia;
 		double raioTerra = 6371;
-		distancia = 2*raioTerra*Math.asin(Math.sqrt(Math.pow(Math.sin ((Math.toRadians(latitude1) - Math.toRadians(latitude2))/2), 2)+ (Math.pow(Math.sin ((longitude1 - longitude2)/2), 2))* Math.cos(Math.toRadians(longitude1)) * Math.cos(Math.toRadians(longitude2))));     
+		distancia = 2*raioTerra*Math.asin(Math.sqrt(Math.pow(Math.sin ((Math.toRadians(local1.getLatitude()) - Math.toRadians(local2.getLatitude()))/2), 2)+ (Math.pow(Math.sin ((local1.getLongitude() - local2.getLongitude())/2), 2))* Math.cos(Math.toRadians(local1.getLongitude())) * Math.cos(Math.toRadians(local2.getLongitude()))));     
 		return distancia;
 	}
 
