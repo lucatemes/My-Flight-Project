@@ -41,13 +41,13 @@ public class App {
 		CiaAerea LATAM= new CiaAerea("1314", "LATAM");
 		CiaAerea QATAR= new CiaAerea("1212", "QATAR AIRWAYS");
 
-		Aeronave BOEING177= new Aeronave("157","Avião para voos internacionais.");
+		Aeronave BOEING177= new Aeronave("177","Avião para voos internacionais.");
 		Aeronave BOEING777= new Aeronave("777", "Avião destinado para voos nacionais");
 
 		Geo portoAlegreGeo= new Geo(-30.033056, -51.230000);
 		Geo dohaQatar= new Geo(25.2807,51.5217);
-		Geo guarulhosGeo= new Geo(-23.4322, -46.4692);
-		Geo santaMonicaGEO= new Geo(34.0158, -118.451);
+		Geo guarulhosGeo= new Geo(-23.431934, -46.469320);
+		Geo santaMonicaGEO= new Geo(33.943091, -118.408125);
 
 		Aeroporto SalgadoFilho= new Aeroporto("3", "POA", portoAlegreGeo);
 		Aeroporto HamadDoha= new Aeroporto("4", "HAMAD", dohaQatar);
@@ -73,8 +73,9 @@ public class App {
 		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao3, 368);
 
 		VooEscalas GUARxpoa= new VooEscalas(GtoP, GtoD, datahora1, duracao3, 368);
-		System.out.println(GUARxpoa.toString());
 
+		System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, portoAlegreGeo));
+		System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, santaMonicaGEO));
 		//GERENCIAMENTO
 
 		GerenciadorCias gerenEmpresa= new GerenciadorCias();
@@ -158,7 +159,7 @@ public class App {
 			case 6:
 				System.out.println("Dentre estas opções, onde você deseja embarcar no voo:");
 				gerenAero.listarTodos();
-				usr.nextLine();
+				
 				String origemUss= usr.nextLine();
 				System.out.println("Agora, dentre estas opções, para onde você deseja ir:");
 				gerenAero.listarTodos();
