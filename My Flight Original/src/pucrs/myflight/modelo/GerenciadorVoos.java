@@ -4,37 +4,64 @@ import java.time.LocalDateTime;
 
 public class GerenciadorVoos {
     private ArrayList<Voo> voos= new ArrayList<>();
+    private ArrayList<VooEscalas> escalas= new ArrayList<>();
 
     public void adicionar(Voo v1){
         voos.add(v1);
     }
 
+    public void adicionar(VooEscalas v1){
+        escalas.add(v1);
+    }
+
     //lista todos voos
 
     public void listarTodos(){
-        int contador =0;
-        for(Voo lista : voos ){
-            System.out.println("=================================");
-            System.out.print("NÚMERO DO VOO: ");
-            System.out.println(voos.indexOf(lista) + 1);
-            System.out.print("DATA/HORA: ");
-			System.out.println(lista.getDatahora());
-            System.out.print("DURAÇÃO: ");
-			System.out.println(lista.getDuracao());
-            System.out.print("STATUS: ");
-			System.out.println(lista.getStatus());
-            System.out.print("ROTA: ");
-			System.out.print(lista.getRota().getOrigem().getNome());
-            System.out.print(" X ");
-            System.out.println(lista.getRota().getDestino().getNome());
-            System.out.print("LUGARES DISPONÍVEIS: ");
-            System.out.println(lista.getLugares());
-            System.out.print("==================================");
-            contador++;
-		}
-        if(contador == 0){
-            System.out.println("Nenhum voo encontrado.");
-        }
+        int contador= 0;
+        for(Voo lista : voos){
+        System.out.println("=================================");
+                System.out.print("NÚMERO DO VOO: ");
+                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("DATA/HORA: ");
+			    System.out.println(lista.getDatahora());
+                System.out.print("DURAÇÃO: ");
+			    System.out.println(lista.getDuracao());
+                System.out.print("STATUS: ");
+			    System.out.println(lista.getStatus());
+                System.out.print("ROTA: ");
+			    System.out.print(lista.getRota().getOrigem().getNome());
+                System.out.print(" X ");
+                System.out.println(lista.getRota().getDestino().getNome());
+                System.out.print("LUGARES DISPONÍVEIS: ");
+                System.out.println(lista.getLugares());
+                System.out.println("=================================");
+                contador++;
+                }
+                for(VooEscalas lista1 : escalas){
+                    System.out.println("=================================");
+                            System.out.print("NÚMERO DO VOO: ");
+                            //bug no index !! urgente
+                            System.out.println(escalas.indexOf(lista1) + 1);
+                            System.out.print("DATA/HORA: ");
+                            System.out.println(lista1.getDatahora());
+                            System.out.print("DURAÇÃO: ");
+                            System.out.println(lista1.getDuracao());
+                            System.out.print("STATUS: ");
+                            System.out.println(lista1.getStatus());
+                            System.out.print("ROTA: ");
+                            System.out.print(lista1.getRota().getOrigem().getNome());
+                            System.out.print(" X ");
+                            System.out.print(lista1.getRota().getDestino().getNome());
+                            System.out.print(" X ");
+                            System.out.println(lista1.getRotaFinal().getDestino().getNome());
+                            System.out.println("LUGARES DISPONÍVEIS: ");
+                            System.out.println(lista1.getLugares());
+                            System.out.println("=================================");
+                            contador++;
+                        } 
+                        if(contador == 0){
+                            System.out.println("Nenhum voo encontrado.");
+                        }
     }
 
     // busca voos por rota
@@ -207,4 +234,5 @@ public class GerenciadorVoos {
             System.out.println("Voo não encontrado.");
         }
     }
+
 }   

@@ -57,12 +57,14 @@ public class App {
 		Rota GtoS = new Rota(LATAM, Guarulhos, SantaMonica, BOEING777);
 		Rota GtoP = new Rota(GOL, Guarulhos, SalgadoFilho, BOEING177);
 		Rota GtoD = new Rota(QATAR, Guarulhos, HamadDoha, BOEING777);
+		Rota PtoG = new Rota(GOL, SalgadoFilho, Guarulhos, BOEING777);
 
 		// duração de cada voo
 
 		Duration duracao2= Duration.ofMinutes(120);
 		Duration duracao1= Duration.ofMinutes(522);
 		Duration duracao3= Duration.ofMinutes(850);
+		Duration duracao4= Duration.ofMinutes(portoAlegreGeo.getDuracao(portoAlegreGeo, dohaQatar));
 
 		LocalDateTime datahora1= LocalDateTime.of(2023, 03, 16, 0, 0);
 
@@ -70,9 +72,9 @@ public class App {
 
 		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 301);
 		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80);
-		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao3, 368);
+		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao1, 368);
 
-		VooEscalas GUARxpoa= new VooEscalas(GtoP, GtoD, datahora1, duracao3, 368);
+		VooEscalas POAxGUARxDOHA= new VooEscalas(PtoG, GtoD, datahora1, duracao4, 350);
 
 		System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, portoAlegreGeo));
 		System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, santaMonicaGEO));
@@ -91,6 +93,7 @@ public class App {
 		gerenVoos.adicionar(GUARxDOHA);
 		gerenVoos.adicionar(GUARxSWMN);
 		gerenVoos.adicionar(GUARxPOA);
+		gerenVoos.adicionar(POAxGUARxDOHA);
 
 		
 		

@@ -10,10 +10,14 @@ public class VooEscalas extends Voo
     public VooEscalas(Rota rota, Rota rotaFinal, LocalDateTime datahora, Duration duracao, int lugares) {
         super(rota, datahora, duracao, lugares); // chama o construtor de Voo
         this.rotaFinal = rotaFinal;
-     }
+    }
 
     @Override
     public String toString() {
        return super.toString() + " -> " + rotaFinal;
+    }
+
+    public Rota getRotaFinal(){
+        return rotaFinal;
     }
 }
