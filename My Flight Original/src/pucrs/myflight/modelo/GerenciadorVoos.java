@@ -11,17 +11,19 @@ public class GerenciadorVoos {
     }
 
     public void adicionar(VooEscalas v1){
-        escalas.add(v1);
+       escalas.add(v1);
     }
 
     //lista todos voos
 
     public void listarTodos(){
         int contador= 0;
+        int temp= 0;
         for(Voo lista : voos){
         System.out.println("=================================");
                 System.out.print("NÚMERO DO VOO: ");
                 System.out.println(voos.indexOf(lista) + 1);
+                temp= voos.indexOf(lista) + 1;
                 System.out.print("DATA/HORA: ");
 			    System.out.println(lista.getDatahora());
                 System.out.print("DURAÇÃO: ");
@@ -40,8 +42,8 @@ public class GerenciadorVoos {
                 for(VooEscalas lista1 : escalas){
                     System.out.println("=================================");
                             System.out.print("NÚMERO DO VOO: ");
-                            //bug no index !! urgente
-                            System.out.println(escalas.indexOf(lista1) + 1);
+                            System.out.println(temp+1);
+                            temp+=1;
                             System.out.print("DATA/HORA: ");
                             System.out.println(lista1.getDatahora());
                             System.out.print("DURAÇÃO: ");
@@ -54,11 +56,11 @@ public class GerenciadorVoos {
                             System.out.print(lista1.getRota().getDestino().getNome());
                             System.out.print(" X ");
                             System.out.println(lista1.getRotaFinal().getDestino().getNome());
-                            System.out.println("LUGARES DISPONÍVEIS: ");
+                            System.out.print("LUGARES DISPONÍVEIS: ");
                             System.out.println(lista1.getLugares());
                             System.out.println("=================================");
                             contador++;
-                        } 
+                            }
                         if(contador == 0){
                             System.out.println("Nenhum voo encontrado.");
                         }
@@ -184,8 +186,10 @@ public class GerenciadorVoos {
     public void comprarTicket(int nVoo, int qtdBilhete){
         int newVoo= nVoo - 1;
         int contador= 0;
+        int contador2= 1;
         if(newVoo >= 0){
         for(Voo lista: voos){
+            contador2++;
             if(newVoo == voos.indexOf(lista)){
                 if(qtdBilhete > 0 && qtdBilhete <= lista.getLugares()){
                 lista.setLugares(lista.getLugares() - qtdBilhete);
@@ -193,11 +197,23 @@ public class GerenciadorVoos {
                 }else{
                     System.out.println("Não é possível fornecer esta quantidade de bilhetes.");
                 }
-                contador++;
-            
+                contador++;  
             }
         }
         }
+        /* bug no vooescalas
+        for(VooEscalas lista1: escalas){
+            if(newVoo == voos.indexOf(lista1) + contador2){
+             if(qtdBilhete > 0 && qtdBilhete <= lista1.getLugares()){
+                    lista1.setLugares(lista1.getLugares() - qtdBilhete);
+                    System.out.println("Compra efetuada com sucesso, lugares disponíveis: " + lista1.getLugares());
+                    }else{
+                        System.out.println("Não é possível fornecer esta quantidade de bilhetes.");
+                    }
+                 contador++;
+            }
+        }
+        */
         if(contador == 0){
             System.out.println("Nenhum voo com este código encontrado.");
         }

@@ -65,6 +65,7 @@ public class App {
 		Duration duracao1= Duration.ofMinutes(522);
 		Duration duracao3= Duration.ofMinutes(850);
 		Duration duracao4= Duration.ofMinutes(portoAlegreGeo.getDuracao(portoAlegreGeo, dohaQatar));
+		Duration duracao5= Duration.ofMinutes(portoAlegreGeo.getDuracao(portoAlegreGeo, santaMonicaGEO));
 
 		LocalDateTime datahora1= LocalDateTime.of(2023, 03, 16, 0, 0);
 
@@ -73,11 +74,11 @@ public class App {
 		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 301);
 		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80);
 		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao1, 368);
-
+		VooEscalas POAxGUARxSWMN= new VooEscalas(PtoG, GtoS, datahora1, duracao5, 360);
 		VooEscalas POAxGUARxDOHA= new VooEscalas(PtoG, GtoD, datahora1, duracao4, 350);
 
-		System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, portoAlegreGeo));
-		System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, santaMonicaGEO));
+		//System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, portoAlegreGeo)); //teste
+		//System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, santaMonicaGEO)); //teste
 		//GERENCIAMENTO
 
 		GerenciadorCias gerenEmpresa= new GerenciadorCias();
@@ -94,6 +95,7 @@ public class App {
 		gerenVoos.adicionar(GUARxSWMN);
 		gerenVoos.adicionar(GUARxPOA);
 		gerenVoos.adicionar(POAxGUARxDOHA);
+		gerenVoos.adicionar(POAxGUARxSWMN);
 
 		
 		
