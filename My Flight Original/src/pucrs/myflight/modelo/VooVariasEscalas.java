@@ -7,8 +7,8 @@ public class VooVariasEscalas extends VooEscalas
 {
     private Rota rotaFinal2;
 
-    public VooVariasEscalas(Rota rota, Rota rotaFinal, Rota rotaFinal2, LocalDateTime datahora, Duration duracao, int lugares) {
-        super(rota, rotaFinal, datahora, duracao, lugares); // chama o construtor de Voo
+    public VooVariasEscalas(Rota rota, Rota rotaFinal, Rota rotaFinal2, LocalDateTime datahora, Duration duracao, int lugares, String codigo) {
+        super(rota, rotaFinal, datahora, duracao, lugares, codigo); // chama o construtor de Voo
         
         this.rotaFinal2 = rotaFinal2;
     }

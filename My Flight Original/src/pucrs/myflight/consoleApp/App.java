@@ -71,11 +71,11 @@ public class App {
 
 		Voo.Status confirmado = Voo.Status.CONFIRMADO;
 
-		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 301);
-		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80);
-		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao1, 368);
-		VooEscalas POAxGUARxSWMN= new VooEscalas(PtoG, GtoS, datahora1, duracao5, 360);
-		VooEscalas POAxGUARxDOHA= new VooEscalas(PtoG, GtoD, datahora1, duracao4, 350);
+		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 301, "LA01");
+		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80, "GO01");
+		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao1, 368, "QA01");
+		VooEscalas POAxGUARxSWMN= new VooEscalas(PtoG, GtoS, datahora1, duracao5, 360, "GOLA01");
+		VooEscalas POAxGUARxDOHA= new VooEscalas(PtoG, GtoD, datahora1, duracao4, 350, "GOQA01");
 
 		//System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, portoAlegreGeo)); //teste
 		//System.out.println(santaMonicaGEO.getDistancia(guarulhosGeo, santaMonicaGEO)); //teste
@@ -156,7 +156,8 @@ public class App {
 			case 5:
 				System.out.println(" ");
 				System.out.println("Digite o número do voo que deseja efetuar a compra:");
-				int vooUsr= usr.nextInt();
+				usr.nextLine();
+				String vooUsr= usr.nextLine();
 				System.out.println("Quantos bilhetes deseja comprar?:");
 				int vooUsr2= usr.nextInt();
 				gerenVoos.comprarTicket(vooUsr, vooUsr2);

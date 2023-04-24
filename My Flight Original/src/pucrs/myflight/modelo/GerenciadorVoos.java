@@ -21,9 +21,8 @@ public class GerenciadorVoos {
         int temp= 0;
         for(Voo lista : voos){
         System.out.println("=================================");
-                System.out.print("NÚMERO DO VOO: ");
-                System.out.println(voos.indexOf(lista) + 1);
-                temp= voos.indexOf(lista) + 1;
+                System.out.print("CÓDIGO DO VOO: ");
+                System.out.println(lista.getCodigo());
                 System.out.print("DATA/HORA: ");
 			    System.out.println(lista.getDatahora());
                 System.out.print("DURAÇÃO: ");
@@ -41,9 +40,8 @@ public class GerenciadorVoos {
                 }
                 for(VooEscalas lista1 : escalas){
                     System.out.println("=================================");
-                            System.out.print("NÚMERO DO VOO: ");
-                            System.out.println(temp+1);
-                            temp+=1;
+                            System.out.print("CÓDIGO DO VOO: ");
+                            System.out.println(lista1.getCodigo());
                             System.out.print("DATA/HORA: ");
                             System.out.println(lista1.getDatahora());
                             System.out.print("DURAÇÃO: ");
@@ -74,8 +72,8 @@ public class GerenciadorVoos {
             if(lista.getRota().getOrigem().getNome().equals(origem) && lista.getRota().getDestino().getNome().equals(destino)){
                 contador++;
                 System.out.println("=================================");
-                System.out.print("NÚMERO DO VOO: ");
-                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("CÓDIGO DO VOO: ");
+                System.out.println(lista.getCodigo());
                 System.out.print("DATA/HORA: ");
 			    System.out.println(lista.getDatahora());
                 System.out.print("DURAÇÃO: ");
@@ -104,8 +102,8 @@ public class GerenciadorVoos {
         for(Voo lista : voos){
             if(destino.equals(lista.getRota().getDestino().getNome())){
                 System.out.println("=================================");
-                System.out.print("NÚMERO DO VOO: ");
-                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("CÓDIGO DO VOO: ");
+                System.out.println(lista.getCodigo());
                 System.out.print("DATA/HORA: ");
 			    System.out.println(lista.getDatahora());
                 System.out.print("DURAÇÃO: ");
@@ -134,8 +132,8 @@ public class GerenciadorVoos {
         for(Voo lista : voos){
             if(origem.equals(lista.getRota().getOrigem().getNome())){
                 System.out.println("=================================");
-                System.out.print("NÚMERO DO VOO: ");
-                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("CÓDIGO DO VOO: ");
+                System.out.println(lista.getCodigo());
                 System.out.print("DATA/HORA: ");
 			    System.out.println(lista.getDatahora());
                 System.out.print("DURAÇÃO: ");
@@ -164,8 +162,8 @@ public class GerenciadorVoos {
         for(Voo lista : voos){
             if(data == lista.getDatahora()){
                 System.out.println("=================================");
-                System.out.print("NÚMERO DO VOO: ");
-                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("CÓDIGO DO VOO: ");
+                System.out.println(lista.getCodigo());
                 System.out.println("|ROTA|");
                 System.out.print(lista.getRota().getOrigem().getNome());
                 System.out.print(" X ");
@@ -183,14 +181,11 @@ public class GerenciadorVoos {
 
     //reserva tickets de voo
 
-    public void comprarTicket(int nVoo, int qtdBilhete){
-        int newVoo= nVoo - 1;
+    public void comprarTicket(String nVoo, int qtdBilhete){
         int contador= 0;
-        int contador2= 1;
-        if(newVoo >= 0){
+       
         for(Voo lista: voos){
-            contador2++;
-            if(newVoo == voos.indexOf(lista)){
+            if(nVoo.equals(lista.getCodigo())){
                 if(qtdBilhete > 0 && qtdBilhete <= lista.getLugares()){
                 lista.setLugares(lista.getLugares() - qtdBilhete);
                 System.out.println("Compra efetuada com sucesso, lugares disponíveis: " + lista.getLugares());
@@ -200,10 +195,8 @@ public class GerenciadorVoos {
                 contador++;  
             }
         }
-        }
-        /* bug no vooescalas
         for(VooEscalas lista1: escalas){
-            if(newVoo == voos.indexOf(lista1) + contador2){
+            if(nVoo.equals(lista1.getCodigo())){
              if(qtdBilhete > 0 && qtdBilhete <= lista1.getLugares()){
                     lista1.setLugares(lista1.getLugares() - qtdBilhete);
                     System.out.println("Compra efetuada com sucesso, lugares disponíveis: " + lista1.getLugares());
@@ -213,7 +206,6 @@ public class GerenciadorVoos {
                  contador++;
             }
         }
-        */
         if(contador == 0){
             System.out.println("Nenhum voo com este código encontrado.");
         }
@@ -226,8 +218,8 @@ public class GerenciadorVoos {
                 if(lista.getLugares() >= lugaresMinimos){
                 contador++;
                 System.out.println("=================================");
-                System.out.print("NÚMERO DO VOO: ");
-                System.out.println(voos.indexOf(lista) + 1);
+                System.out.print("CÓDIGO DO VOO: ");
+                System.out.println(lista.getCodigo() + 1);
                 System.out.print("DATA/HORA: ");
 			    System.out.println(lista.getDatahora());
                 System.out.print("DURAÇÃO: ");
