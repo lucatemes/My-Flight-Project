@@ -23,7 +23,6 @@ public class App {
 		// planejamento
 		// adicionar varias funções em uma ex: buscar voos mais especificamente, apresentando mais informações
 		// como data, origem, destino, aeronave e cia aerea
-		// adicionar valor de ticket e dinheiro de cada usuario
 		// por fim adicionar uma interface grafica para interação
 		 * Processo para criação de Voos!!
 		 * 1º Criação das CIAS aéreas;
@@ -61,9 +60,9 @@ public class App {
 
 		// duração de cada voo
 
-		Duration duracao2= Duration.ofMinutes(120);
-		Duration duracao1= Duration.ofMinutes(522);
-		Duration duracao3= Duration.ofMinutes(850);
+		Duration duracao2= Duration.ofMinutes(portoAlegreGeo.getDuracao(guarulhosGeo, portoAlegreGeo));//GuarxPoa
+		Duration duracao1= Duration.ofMinutes(portoAlegreGeo.getDuracao(guarulhosGeo, dohaQatar));//GuarxDoha
+		Duration duracao3= Duration.ofMinutes(portoAlegreGeo.getDuracao(guarulhosGeo, santaMonicaGEO));
 		Duration duracao4= Duration.ofMinutes(portoAlegreGeo.getDuracao(portoAlegreGeo, dohaQatar));
 		Duration duracao5= Duration.ofMinutes(portoAlegreGeo.getDuracao(portoAlegreGeo, santaMonicaGEO));
 
@@ -71,7 +70,7 @@ public class App {
 
 		Voo.Status confirmado = Voo.Status.CONFIRMADO;
 
-		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao1, 301, "LA01");
+		Voo GUARxSWMN= new Voo(GtoS, datahora1, duracao3, 301, "LA01");
 		Voo GUARxPOA= new Voo(GtoP, datahora1, duracao2, 80, "GO01");
 		Voo GUARxDOHA= new Voo(GtoD, datahora1, duracao1, 368, "QA01");
 		VooEscalas POAxGUARxSWMN= new VooEscalas(PtoG, GtoS, datahora1, duracao5, 360, "GOLA01");

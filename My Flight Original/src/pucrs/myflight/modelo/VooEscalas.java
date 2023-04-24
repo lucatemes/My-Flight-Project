@@ -20,4 +20,5 @@ public class VooEscalas extends Voo
     public Rota getRotaFinal(){
         return rotaFinal;
     }
+
 }

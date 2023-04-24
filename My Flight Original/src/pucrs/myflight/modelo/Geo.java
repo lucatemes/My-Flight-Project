@@ -39,8 +39,8 @@ public class Geo {
 
 	public long getDuracao (Geo local1, Geo local2){
 		double distancia = getDistancia(local1, local2);
-		double velocidadeMedia = 850;
-		double duracao = (distancia / velocidadeMedia) * 60;
-		return (long) duracao;
+		double velocidadeMedia = 805;
+		double duracao = (distancia / velocidadeMedia) * 60 + 30;
+		return (long) duracao ;
 	}
 }

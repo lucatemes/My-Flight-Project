@@ -38,30 +38,30 @@ public class GerenciadorVoos {
                 System.out.println("=================================");
                 contador++;
                 }
-                for(VooEscalas lista1 : escalas){
+            for(VooEscalas lista1 : escalas){
                     System.out.println("=================================");
-                            System.out.print("CÓDIGO DO VOO: ");
-                            System.out.println(lista1.getCodigo());
-                            System.out.print("DATA/HORA: ");
-                            System.out.println(lista1.getDatahora());
-                            System.out.print("DURAÇÃO: ");
-                            System.out.println(lista1.getDuracao());
-                            System.out.print("STATUS: ");
-                            System.out.println(lista1.getStatus());
-                            System.out.print("ROTA: ");
-                            System.out.print(lista1.getRota().getOrigem().getNome());
-                            System.out.print(" X ");
-                            System.out.print(lista1.getRota().getDestino().getNome());
-                            System.out.print(" X ");
-                            System.out.println(lista1.getRotaFinal().getDestino().getNome());
-                            System.out.print("LUGARES DISPONÍVEIS: ");
-                            System.out.println(lista1.getLugares());
-                            System.out.println("=================================");
-                            contador++;
-                            }
-                        if(contador == 0){
-                            System.out.println("Nenhum voo encontrado.");
+                    System.out.print("CÓDIGO DO VOO: ");
+                    System.out.println(lista1.getCodigo());
+                    System.out.print("DATA/HORA: ");
+                    System.out.println(lista1.getDatahora());
+                    System.out.print("DURAÇÃO: ");
+                    System.out.println(lista1.getDuracao());
+                    System.out.print("STATUS: ");
+                    System.out.println(lista1.getStatus());
+                    System.out.print("ROTA: ");
+                    System.out.print(lista1.getRota().getOrigem().getNome());
+                    System.out.print(" X ");
+                    System.out.print(lista1.getRota().getDestino().getNome());
+                    System.out.print(" X ");
+                    System.out.println(lista1.getRotaFinal().getDestino().getNome());
+                    System.out.print("LUGARES DISPONÍVEIS: ");
+                    System.out.println(lista1.getLugares());
+                    System.out.println("=================================");
+                    contador++;
                         }
+                    if(contador == 0){
+                        System.out.println("Nenhum voo encontrado.");
+                    }
     }
 
     // busca voos por rota
@@ -87,6 +87,29 @@ public class GerenciadorVoos {
                 System.out.print("LUGARES DISPONÍVEIS: ");
                 System.out.println(lista.getLugares());
                 System.out.println("=================================");
+            }
+            for(VooEscalas lista1 : escalas){
+                if(lista1.getRota().getOrigem().getNome().equals(origem) && lista1.getRota().getDestino().getNome().equals(destino)){
+                System.out.println("=================================");
+                System.out.print("CÓDIGO DO VOO: ");
+                System.out.println(lista1.getCodigo());
+                System.out.print("DATA/HORA: ");
+                System.out.println(lista1.getDatahora());
+                System.out.print("DURAÇÃO: ");
+                System.out.println(lista1.getDuracao());
+                System.out.print("STATUS: ");
+                System.out.println(lista1.getStatus());
+                System.out.print("ROTA: ");
+                System.out.print(lista1.getRota().getOrigem().getNome());
+                System.out.print(" X ");
+                System.out.print(lista1.getRota().getDestino().getNome());
+                System.out.print(" X ");
+                System.out.println(lista1.getRotaFinal().getDestino().getNome());
+                System.out.print("LUGARES DISPONÍVEIS: ");
+                System.out.println(lista1.getLugares());
+                System.out.println("=================================");
+                contador++;
+                }
             }
         }
         if(contador == 0){
@@ -120,6 +143,29 @@ public class GerenciadorVoos {
                 contador++;
             }
         }
+        for(VooEscalas lista1 : escalas){
+            if(destino.equals(lista1.getRotaFinal().getDestino().getNome())){
+            System.out.println("=================================");
+            System.out.print("CÓDIGO DO VOO: ");
+            System.out.println(lista1.getCodigo());
+            System.out.print("DATA/HORA: ");
+            System.out.println(lista1.getDatahora());
+            System.out.print("DURAÇÃO: ");
+            System.out.println(lista1.getDuracao());
+            System.out.print("STATUS: ");
+            System.out.println(lista1.getStatus());
+            System.out.print("ROTA: ");
+            System.out.print(lista1.getRota().getOrigem().getNome());
+            System.out.print(" X ");
+            System.out.print(lista1.getRota().getDestino().getNome());
+            System.out.print(" X ");
+            System.out.println(lista1.getRotaFinal().getDestino().getNome());
+            System.out.print("LUGARES DISPONÍVEIS: ");
+            System.out.println(lista1.getLugares());
+            System.out.println("=================================");
+            contador++;
+            }
+        }
         if(contador == 0){
             System.out.println("Voo não encontrado.");
         }
@@ -148,6 +194,29 @@ public class GerenciadorVoos {
                 System.out.println(lista.getLugares());
                 System.out.println("=================================");
                 contador++;
+            }
+        }
+        for(VooEscalas lista1 : escalas){
+            if(origem.equals(lista1.getRota().getOrigem().getNome())){
+            System.out.println("=================================");
+            System.out.print("CÓDIGO DO VOO: ");
+            System.out.println(lista1.getCodigo());
+            System.out.print("DATA/HORA: ");
+            System.out.println(lista1.getDatahora());
+            System.out.print("DURAÇÃO: ");
+            System.out.println(lista1.getDuracao());
+            System.out.print("STATUS: ");
+            System.out.println(lista1.getStatus());
+            System.out.print("ROTA: ");
+            System.out.print(lista1.getRota().getOrigem().getNome());
+            System.out.print(" X ");
+            System.out.print(lista1.getRota().getDestino().getNome());
+            System.out.print(" X ");
+            System.out.println(lista1.getRotaFinal().getDestino().getNome());
+            System.out.print("LUGARES DISPONÍVEIS: ");
+            System.out.println(lista1.getLugares());
+            System.out.println("=================================");
+            contador++;
             }
         }
         if(contador == 0){
