@@ -154,7 +154,7 @@ public class App {
 				break;
 			case 5:
 				System.out.println(" ");
-				System.out.println("Digite o número do voo que deseja efetuar a compra:");
+				System.out.println("Digite o código do voo que deseja efetuar a compra:");
 				usr.nextLine();
 				String vooUsr= usr.nextLine();
 				System.out.println("Quantos bilhetes deseja comprar?:");

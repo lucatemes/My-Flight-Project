@@ -13,6 +13,7 @@ public class Voo {
 	private Status status;
 	private int lugares;
 	private String codigoVoo;
+	//codigo apresentado na hora de comprar tickets
 	
 	public Voo(Rota rota, LocalDateTime datahora, Duration duracao, int lugares, String coodigoVoo) {
 		this.rota = rota;
