@@ -164,7 +164,7 @@ public class App {
 			case 6:
 				System.out.println("Dentre estas opções, onde você deseja embarcar no voo:");
 				gerenAero.listarTodos();
-				
+				usr.nextLine();
 				String origemUss= usr.nextLine();
 				System.out.println("Agora, dentre estas opções, para onde você deseja ir:");
 				gerenAero.listarTodos();

@@ -63,4 +63,24 @@ public class Voo {
 	public void setLugares(int vagas){
 		this.lugares= vagas;
 	}
+
+	public String toString(){
+		StringBuilder sb= new StringBuilder();
+		sb.append("===================");
+		sb.append("\nCÓDIGO DO VOO: ");
+		sb.append(getCodigo());
+                sb.append("\nDATA/HORA: ");
+			    sb.append(getDatahora());
+                sb.append("\nDURAÇÃO: ");
+			    sb.append(getDuracao());
+                sb.append("\nSTATUS: ");
+			    sb.append(getStatus());
+                sb.append("\nROTA: ");
+			    sb.append(getRota().getOrigem().getNome());
+                sb.append(" X ");
+                sb.append(getRota().getDestino().getNome());
+                sb.append("\nLUGARES DISPONÍVEIS: ");
+                sb.append(getLugares());
+		return sb.toString();
+	}
 }

@@ -14,7 +14,25 @@ public class VooEscalas extends Voo
 
     @Override
     public String toString() {
-       return super.toString() + " -> " + rotaFinal;
+        StringBuilder sa= new StringBuilder();
+		sa.append("===================");
+		sa.append("\nCÓDIGO DO VOO: ");
+		sa.append(getCodigo());
+                sa.append("\nDATA/HORA: ");
+			    sa.append(getDatahora());
+                sa.append("\nDURAÇÃO: ");
+			    sa.append(getDuracao());
+                sa.append("\nSTATUS: ");
+			    sa.append(getStatus());
+                sa.append("\nROTA: ");
+			    sa.append(getRota().getOrigem().getNome());
+                sa.append(" X ");
+                sa.append(getRota().getDestino().getNome());
+                sa.append(" X ");
+                sa.append(getRotaFinal().getDestino().getNome());
+                sa.append("\nLUGARES DISPONÍVEIS: ");
+                sa.append(getLugares());
+		return sa.toString();
     }
 
     public Rota getRotaFinal(){
