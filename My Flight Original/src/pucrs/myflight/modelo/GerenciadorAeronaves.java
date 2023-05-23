@@ -11,7 +11,7 @@ public class GerenciadorAeronaves {
 
     public void listarTodos(){
         for(Aeronave lista : avioes){
-            System.out.println(lista.getCodigo());
+            System.out.print(lista.getCodigo() + ", ");
         }
     }
 

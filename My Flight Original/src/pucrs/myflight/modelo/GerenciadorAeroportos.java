@@ -12,7 +12,7 @@ public class GerenciadorAeroportos {
 
     public void listarTodos(){
         for(Aeroporto lista : aeros){
-			System.out.println(lista.getNome());
+			System.out.print(lista.getNome() + ", ");
 		}
     }
 

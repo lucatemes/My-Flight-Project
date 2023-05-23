@@ -1,6 +1,7 @@
 package pucrs.myflight.consoleApp;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 import pucrs.myflight.modelo.Aeronave;
 import pucrs.myflight.modelo.Aeroporto;
@@ -10,31 +11,16 @@ import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.GerenciadorVoos;
+import pucrs.myflight.modelo.LeitorAeroporto;
 import pucrs.myflight.modelo.Rota;
 import pucrs.myflight.modelo.Voo;
 import pucrs.myflight.modelo.VooEscalas;
+import pucrs.myflight.modelo.VooVariasEscalas;
 
 public class App {
 	public static void main(String[] args) {
 		
 		System.out.println("\nMyFlight project...");
-
-		/*
-		// planejamento
-		// adicionar varias funções em uma ex: buscar voos mais especificamente, apresentando mais informações
-		// como data, origem, destino, aeronave e cia aerea
-		// por fim adicionar uma interface grafica para interação
-		 * Processo para criação de Voos!!
-		 * 1º Criação das CIAS aéreas;
-		 * 2º Criação da aeronave;
-		 * 3º Criação da geolocalização da origem e destino (coordenadas);
-		 * 4º Criação dos aeroportos com a respectiva localização;
-		 * 5º Criação da Rota incluindo CIA, Aeroporto de origem, Aeoroporto de destino e o Avião;
-		 * 6º Criação da duração em minutos da viagem;
-		 * 7º Criação de um LocalDateTime;
-		 * 8º Definir um status;
-		 * 9º Para finalizar a criação do Voo, incluindo Rota, LocalDateTime e duração
-		 */
 
 		CiaAerea GOL= new CiaAerea("1231", "GOL");
 		CiaAerea LATAM= new CiaAerea("1314", "LATAM");
@@ -96,7 +82,16 @@ public class App {
 		gerenVoos.adicionar(POAxGUARxDOHA);
 		gerenVoos.adicionar(POAxGUARxSWMN);
 
-		
+		//dados input
+
+		LeitorAeroporto leitorAero= new LeitorAeroporto();
+		String dadosAero= "airports.dat";
+		ArrayList<Aeroporto> aeroArquivos= new ArrayList<Aeroporto>();
+		aeroArquivos=leitorAero.leArquivo(dadosAero);
+		int tamanho1= aeroArquivos.size();
+		for(int i= 0; i < tamanho1; i++){
+			gerenAero.adicionar(aeroArquivos.get(i));
+		}		
 		
 		/*
 		 * MENU:
