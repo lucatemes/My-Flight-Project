@@ -12,6 +12,7 @@ import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.GerenciadorVoos;
 import pucrs.myflight.modelo.LeitorAeroporto;
+import pucrs.myflight.modelo.LeitorCompanhia;
 import pucrs.myflight.modelo.Rota;
 import pucrs.myflight.modelo.Voo;
 import pucrs.myflight.modelo.VooEscalas;
@@ -82,16 +83,29 @@ public class App {
 		gerenVoos.adicionar(POAxGUARxDOHA);
 		gerenVoos.adicionar(POAxGUARxSWMN);
 
-		//dados input
+		//input de dados do tipo .dat
 
+		//lendo airports.dat
 		LeitorAeroporto leitorAero= new LeitorAeroporto();
 		String dadosAero= "airports.dat";
 		ArrayList<Aeroporto> aeroArquivos= new ArrayList<Aeroporto>();
 		aeroArquivos=leitorAero.leArquivo(dadosAero);
-		int tamanho1= aeroArquivos.size();
-		for(int i= 0; i < tamanho1; i++){
+	
+		for(int i= 0; i < aeroArquivos.size(); i++){
 			gerenAero.adicionar(aeroArquivos.get(i));
-		}		
+		}
+
+		//lendo airlines.dat
+		LeitorCompanhia leitorCia= new LeitorCompanhia();
+		String dadosCia= "airlines.dat";
+		ArrayList<CiaAerea> listaCias= new ArrayList<CiaAerea>();
+		listaCias= leitorCia.leArquivo(dadosCia);
+		
+		for(int i=0; i < listaCias.size(); i++){
+			gerenEmpresa.adicionar(listaCias.get(i));
+		}
+
+		//gerenEmpresa.listarTodas();
 		
 		/*
 		 * MENU:
