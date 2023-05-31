@@ -1,6 +1,5 @@
 package pucrs.myflight.modelo;
 
-import java.time.Duration;
 
 public class Geo {
 	private double latitude;

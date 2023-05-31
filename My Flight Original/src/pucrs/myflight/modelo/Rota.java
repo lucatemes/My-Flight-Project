@@ -10,7 +10,7 @@ public class Rota {
 		this.cia = cia;
 		this.origem = origem;
 		this.destino = destino;
-		this.aeronave = aeronave;		
+		this.aeronave = aeronave;	
 	}	
 	
 	public CiaAerea getCia() {

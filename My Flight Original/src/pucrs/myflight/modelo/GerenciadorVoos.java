@@ -18,7 +18,6 @@ public class GerenciadorVoos {
 
     public void listarTodos(){
         int contador= 0;
-        int temp= 0;
         for(Voo lista : voos){
             System.out.println(lista.toString());
             contador++;

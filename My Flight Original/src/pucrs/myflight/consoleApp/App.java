@@ -7,10 +7,12 @@ import pucrs.myflight.modelo.Aeronave;
 import pucrs.myflight.modelo.Aeroporto;
 import pucrs.myflight.modelo.CiaAerea;
 import pucrs.myflight.modelo.Geo;
+import pucrs.myflight.modelo.GerenciadorAeronaves;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.GerenciadorVoos;
+import pucrs.myflight.modelo.LeitorAeronaves;
 import pucrs.myflight.modelo.LeitorAeroporto;
 import pucrs.myflight.modelo.LeitorCompanhia;
 import pucrs.myflight.modelo.Rota;
@@ -104,6 +106,20 @@ public class App {
 		for(int i=0; i < listaCias.size(); i++){
 			gerenEmpresa.adicionar(listaCias.get(i));
 		}
+
+		//lendo equipment.dat
+		LeitorAeronaves leitorAeronaves= new LeitorAeronaves();
+		String dadosAeronave= "equipment.dat";
+		ArrayList<Aeronave> listaAeronaves= new ArrayList<Aeronave>();
+		listaAeronaves = leitorAeronaves.leArquivo(dadosAeronave);
+		GerenciadorAeronaves gerenAeronaves= new GerenciadorAeronaves();
+		
+		for(int i= 0; i < listaAeronaves.size(); i++){
+			gerenAeronaves.adicionar(listaAeronaves.get(i));
+		}
+
+		gerenAeronaves.listarTodos();
+
 
 		//gerenEmpresa.listarTodas();
 		
